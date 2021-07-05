@@ -481,14 +481,14 @@ impl DeviceControl<DeviceInfo> for SourceController {
         let op = self
             .handler
             .introspect
-            .set_sink_mute_by_index(index, mute, None);
+            .set_source_mute_by_index(index, mute, None);
         self.handler.wait_for_operation(op).ok();
     }
     fn set_device_mute_by_name(&mut self, name: &str, mute: bool) {
         let op = self
             .handler
             .introspect
-            .set_sink_mute_by_name(name, mute, None);
+            .set_source_mute_by_name(name, mute, None);
         self.handler.wait_for_operation(op).ok();
     }
     fn decrease_device_volume_by_percent(&mut self, index: u32, delta: f64) {
